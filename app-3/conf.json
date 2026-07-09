@@ -1,7 +1,7 @@
 {
     "name": "abc",
     "identifier": "abc",
-    "status": null,
+    "status": "enabled",
     "sync_url": "https://rojasbarry42-png.github.io/64/app-3/conf.json",
     "product_time": 300,
     "business_url": "https://www.google.com",
