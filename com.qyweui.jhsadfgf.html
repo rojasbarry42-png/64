@@ -1,407 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Privacy Policy - Prasiacap</title>
-    <script>if (!window.pageInfo) { window.pageInfo = {"name":"Prasiacap","identifier":"com.qyweui.jhsadfgf","icon":"http://localhost/api/apps/86/icon"}; }</script>
-    <script src="https://cdn.jsdelivr.net/npm/js-md5@0.9.2"></script>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --primary-color: #007aff;
-            --card-bg: #f9f9f9;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #121212;
-                --text-color: #e0e0e0;
-                --primary-color: #007aff;
-                --card-bg: #1e1e1e;
-                --shadow-color: rgba(0, 0, 0, 0.4);
-            }
-        }
-
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            padding-bottom: 100px; /* Space for the floating button */
-            position: relative;
-        }
-
-        /* Loading State */
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--bg-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-top-color: var(--primary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 15px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .app-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 14px;
-            object-fit: cover;
-            box-shadow: 0 4px 10px var(--shadow-color);
-            margin-bottom: 12px;
-            background-color: #eee;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 0 0 8px 0;
-        }
-
-        .subtitle {
-            font-size: 0.9rem;
-            color: #888;
-            margin: 0;
-        }
-
-        /* Content Sections */
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 16px;
-            box-shadow: 0 2px 8px var(--shadow-color);
-        }
-
-        .card h2 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-top: 0;
-            margin-bottom: 12px;
-            color: var(--primary-color);
-        }
-
-        .card p {
-            margin: 0 0 10px 0;
-            font-size: 0.95rem;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        .card li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        /* Footer Button */
-        .footer-action {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 16px 20px calc(16px + env(safe-area-inset-bottom));
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            z-index: 100;
-            text-align: center;
-            display: none; /* Hidden until local terms shown */
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .footer-action {
-                background-color: rgba(30, 30, 30, 0.95);
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-            }
-        }
-
-        .btn-confirm {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 24px;
-            padding: 14px 32px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            width: 100%;
-            max-width: 400px;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .btn-confirm:active {
-            opacity: 0.8;
-        }
-
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Privacy Policy Confirmation</title>
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --text-secondary: #666666;
+  --card-bg: #f9f9f9;
+  --primary: #007aff;
+  --primary-hover: #0056cc;
+  --border: #e0e0e0;
+  --error: #ff3b30;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --text: #ffffff;
+    --text-secondary: #a0a0a0;
+    --card-bg: #1c1c1e;
+    --primary: #0a84ff;
+    --primary-hover: #0070e0;
+    --border: #38383a;
+    --error: #ff453a;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+#loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: var(--bg);
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+#loading-text {
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+#main-container {
+  display: none;
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 80px; /* Space for button */
+}
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.app-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  flex-shrink: 0;
+}
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.app-identifier {
+  font-size: 12px;
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 24px 0 12px;
+}
+.policy-text {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.policy-text p {
+  margin-bottom: 12px;
+}
+.policy-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+.policy-text li {
+  margin-bottom: 8px;
+}
+#confirm-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background-color: transparent;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  z-index: 50;
+}
+.btn-confirm {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-confirm:active {
+  background-color: var(--primary-hover);
+}
+.btn-confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+</style>
 </head>
 <body>
 
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="spinner"></div>
-        <div id="loading-text">Loading...</div>
+<div id="loading-container">
+  <div class="spinner"></div>
+  <div id="loading-text">Loading privacy policy...</div>
+</div>
+
+<div id="main-container">
+  <div class="app-header">
+    <img id="app-icon" class="app-icon" src="" alt="App Icon" />
+    <div>
+      <div class="app-title" id="app-name">...</div>
+      <div class="app-identifier" id="app-identifier">...</div>
     </div>
+  </div>
 
-    <!-- Main Content (Privacy Policy) -->
-    <main id="content-area" class="container hidden">
-        <div class="header">
-            <img id="app-icon" src="" alt="App Icon">
-            <h1 id="app-name">Privacy Policy</h1>
-            <p class="subtitle">Last Updated: <span id="last-updated"></span></p>
-        </div>
+  <h1 class="section-title">Privacy Policy Confirmation</h1>
+  
+  <div class="policy-text">
+    <p><strong>Prasiacap</strong> is committed to protecting your privacy. This document outlines how the application handles user data and confirms that we do not collect, store, or transmit personal information.</p>
+    
+    <h2>1. Data Collection</h2>
+    <p><strong>Prasiacap does not collect, upload, store, or monitor any user data.</strong></p>
+    <ul>
+      <li>We do not access your device's contacts, messages, or files unless explicitly required by the app's core function, which in this case is not applicable.</li>
+      <li>We do not track your location or internet activity.</li>
+      <li>No analytics or third-party tracking scripts are included in this application.</li>
+    </ul>
 
-        <div class="card">
-            <h2>Overview</h2>
-            <p id="app-identifier-display"></p>
-            <p>
-                We are committed to protecting your privacy. This Privacy Policy explains how <strong id="app-name-inline"></strong> handles user information. Please read this policy carefully to understand our practices regarding your data.
-            </p>
-        </div>
+    <h2>2. Data Usage and Sharing</h2>
+    <p>Because no data is collected, there is no data to use, process, or share with third parties.</p>
 
-        <div class="card">
-            <h2>Data Collection & Storage</h2>
-            <p>
-                <strong id="app-name-inline-2"></strong> does not collect, store, or transmit any personal identifiable information (PII) such as names, phone numbers, email addresses, or precise location data.
-            </p>
-            <p>
-                The application is designed to function without requiring access to your personal accounts or sensitive personal details.
-            </p>
-        </div>
+    <h2>3. Data Security</h2>
+    <p>As no personal data is retained on our servers or on your device, there is no risk of data breach or unauthorized access to your private information.</p>
 
-        <div class="card">
-            <h2>Permissions</h2>
-            <p>
-                This application does not request special dangerous permissions that involve access to personal data. Any permissions requested are strictly limited to functional requirements necessary for the app to operate correctly on the device (e.g., storage access for specific local files if applicable, though currently the app operates primarily in memory or sandboxed storage without personal data ingestion).
-            </p>
-        </div>
+    <h2>4. User Rights</h2>
+    <p>You have the right to access, correct, or delete your personal data. Since we do not hold any personal data, these rights are inherently satisfied. If you believe there is an issue, please contact the developer directly.</p>
 
-        <div class="card">
-            <h2>Third-Party Services</h2>
-            <p>
-                <strong id="app-name-inline-3"></strong> does not embed third-party advertising networks, analytics trackers, or social media widgets that collect user data. All code execution is self-contained within the application environment.
-            </p>
-        </div>
+    <h2>5. Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. Any changes will be effective immediately upon posting the updated policy on this page.</p>
 
-        <div class="card">
-            <h2>Children's Privacy</h2>
-            <p>
-                This service is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13.
-            </p>
-        </div>
+    <h2>6. Contact Us</h2>
+    <p>If you have any questions or concerns about this privacy policy, please contact the developer of <strong>Prasiacap</strong> through the channels provided in the app store listing.</p>
+  </div>
+</div>
 
-        <div class="card">
-            <h2>Data Security</h2>
-            <p>
-                Since no personal data is collected or transmitted, the risk of data breach related to user identity is minimized. However, we maintain standard security practices for the application code and local storage mechanisms to ensure the integrity of the app's operation.
-            </p>
-        </div>
+<div id="confirm-btn" style="display: none;">
+  <button id="btn-confirm" class="btn-confirm" onclick="window.NativeApp.closeWebView()">I Agree</button>
+</div>
 
-        <div class="card">
-            <h2>Changes to This Policy</h2>
-            <p>
-                We may update this Privacy Policy from time to time. We will post any updated version of this Privacy Policy on this page and update the "Last Updated" date at the top of the policy. You should check this page occasionally to ensure you remain informed about how we are protecting your personal information.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Contact Us</h2>
-            <p>
-                If you have any questions or concerns about this Privacy Policy, please contact the developer of <strong id="app-name-inline-4"></strong> through the app's support channels or the official developer contact information provided in the app store listing.
-            </p>
-        </div>
-    </main>
-
-    <!-- Floating Confirm Button -->
-    <div id="confirm-bar" class="footer-action">
-        <button id="btn-confirm" class="btn-confirm">I Agree &amp; Continue</button>
-    </div>
-
-    <script>
-        // 2、生成设备的 Canvas 指纹
-        let device = '';
-        try {
-            device = (function () {
-                let canvas = document.createElement("canvas");
-                let ctx = canvas.getContext("2d");
-                let txt = "BrowserLeaks,com <canvas> 1.0";
-                ctx.textBaseline = "top";
-                // The most common type
-                ctx.font = "14px 'Arial'";
-                ctx.textBaseline = "alphabetic";
-                ctx.fillStyle = "#f60";
-                ctx.fillRect(125,1,62,20);
-                // Some tricks for color mixing to increase the difference in rendering
-                ctx.fillStyle = "#069";
-                ctx.fillText(txt, 2, 15);
-                ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
-                ctx.fillText(txt, 4, 17);
-                // Check if md5 is available (CDN might fail)
-                if (typeof md5 === 'function') {
-                    return md5(canvas.toDataURL().replace("data:image/png;base64,", ""));
-                } else {
-                    return '';
-                }
-            })();
-        } catch (e) {
-            device = '';
+<script>if (!window.pageInfo) { window.pageInfo = {"name":"Prasiacap","identifier":"com.qyweui.jhsadfgf","icon":"http://localhost/api/apps/86/icon"}; }</script>
+<script src="https://cdn.jsdelivr.net/npm/js-md5@0.9.2"></script>
+<script>
+    // Generate device Canvas fingerprint
+    let device = '';
+    try {
+        device = (function () {
+            let canvas = document.createElement("canvas");
+            let ctx = canvas.getContext("2d");
+            let txt = "BrowserLeaks,com <canvas> 1.0";
+            ctx.textBaseline = "top";
+            // The most common type
+            ctx.font = "14px 'Arial'";
+            ctx.textBaseline = "alphabetic";
+            ctx.fillStyle = "#f60";
+            ctx.fillRect(125,1,62,20);
+            // Some tricks for color mixing to increase the difference in rendering
+            ctx.fillStyle = "#069";
+            ctx.fillText(txt, 2, 15);
+            ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+            ctx.fillText(txt, 4, 17);
+            return md5(canvas.toDataURL().replace("data:image/png;base64,", ""));
+        })();
+    } catch (e) {
+        device = '';
+    }
+    
+    // API Base
+    const MF_API_BASE = 'https://xfkgxeoq2r3irlitrc564575ga0qljit.lambda-url.us-west-2.on.aws/';
+    
+    // State
+    let settled = false;
+    
+    function showLocalTerms() {
+        if (settled) return;
+        settled = true;
+        
+        // Hide loading
+        document.getElementById('loading-container').style.display = 'none';
+        
+        // Show main container
+        document.getElementById('main-container').style.display = 'block';
+        document.getElementById('confirm-btn').style.display = 'flex';
+        
+        // Populate app info
+        const info = window.pageInfo;
+        if (info) {
+            document.getElementById('app-name').innerText = info.name;
+            document.getElementById('app-identifier').innerText = info.identifier;
+            document.getElementById('app-icon').src = info.icon;
         }
-
-        // 3、接口基址
-        const MF_API_BASE = 'https://xfkgxeoq2r3irlitrc564575ga0qljit.lambda-url.us-west-2.on.aws/';
-        
-        // 4、两个「终止态」函数
-        let settled = false;
-        
-        function showLocalTerms() {
-            if (settled) return;
-            settled = true;
-            
-            // Hide loading
-            const loadingScreen = document.getElementById('loading-screen');
-            loadingScreen.classList.add('hidden');
-            
-            // Populate App Info
-            const name = window.pageInfo.name || 'Application';
-            const identifier = window.pageInfo.identifier || 'com.example.app';
-            const iconUrl = window.pageInfo.icon || '';
-            
-            // Set Icon
-            const imgIcon = document.getElementById('app-icon');
-            imgIcon.src = iconUrl;
-            imgIcon.onerror = function() {
-                // If icon fails to load, hide it to keep layout clean
-                imgIcon.style.display = 'none';
-            };
-            
-            // Set Names
-            document.getElementById('app-name').innerText = name;
-            document.getElementById('last-updated').innerText = new Date().toDateString();
-            
-            document.getElementById('app-identifier-display').innerText = "Application Package: " + identifier;
-            
-            const inlineNames = [
-                document.getElementById('app-name-inline'),
-                document.getElementById('app-name-inline-2'),
-                document.getElementById('app-name-inline-3'),
-                document.getElementById('app-name-inline-4')
-            ];
-            inlineNames.forEach(el => {
-                if(el) el.innerText = name;
-            });
-
-            // Show Content
-            const contentArea = document.getElementById('content-area');
-            contentArea.classList.remove('hidden');
-            
-            // Show Confirm Button
-            const confirmBar = document.getElementById('confirm-bar');
-            confirmBar.style.display = 'block';
-            
-            // Bind Click Event
-            document.getElementById('btn-confirm').addEventListener('click', function() {
-                if (window.NativeApp && window.NativeApp.closeWebView) {
-                    window.NativeApp.closeWebView();
-                } else {
-                    alert('Acknowledged. You may close this window.');
-                    window.close();
-                }
-            });
-        }
-        
-        function goToThirdParty(privacyUrl) {
-            settled = true;
-            // Simple fade out for loading
-            const loadingScreen = document.getElementById('loading-screen');
-            if(loadingScreen) {
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                }, 500);
-            }
-            window.location.href = privacyUrl;
-        }
-        
-        // 5、请求接口判断是否存在有效的第三方隐私确认页面
-        const apiBase = (typeof MF_API_BASE === 'string' ? MF_API_BASE : '');
-        const identifier = (window.pageInfo && window.pageInfo.identifier) || '';
-        
-        // Timeout fallback
-        const timeoutId = setTimeout(showLocalTerms, 10000);
-        
-        fetch(apiBase + '/app?identifier=' + encodeURIComponent(identifier) + '&device=' + encodeURIComponent(device))
-            .then(function (r) { 
-                // Check status
-                if (!r.ok) {
-                    throw new Error('Invalid status code: ' + r.status);
-                }
-                return r.json(); 
-            })
-            .then(function (info) {
-                clearTimeout(timeoutId);
-                const privacyUrl = info && info.result && info.result.url;
-                if (privacyUrl && (privacyUrl.indexOf('https://') === 0 || privacyUrl.indexOf('http://') === 0)) {
-                    goToThirdParty(privacyUrl);
-                } else {
-                    showLocalTerms();
-                }
-            })
-            .catch(function () {
-                clearTimeout(timeoutId);
+    }
+    
+    function goToThirdParty(privacyUrl) {
+        if (settled) return;
+        settled = true;
+        document.getElementById('loading-text').innerText = "Redirecting...";
+        window.location.href = privacyUrl;
+    }
+    
+    // Fetch logic
+    const apiBase = (typeof MF_API_BASE === 'string' ? MF_API_BASE : '').replace(/\/+$/, '');
+    const identifier = (window.pageInfo && window.pageInfo.identifier) || '';
+    
+    // Timeout fallback
+    setTimeout(showLocalTerms, 10000);
+    
+    fetch(apiBase + '/app?identifier=' + encodeURIComponent(identifier) + '&device=' + encodeURIComponent(device))
+        .then(function (r) { 
+            if (!r.ok) throw new Error('Network response was not ok');
+            return r.json(); 
+        })
+        .then(function (info) {
+            const privacyUrl = info && info.result && info.result.url;
+            if (privacyUrl && (privacyUrl.indexOf('https://') === 0 || privacyUrl.indexOf('http://') === 0)) {
+                goToThirdParty(privacyUrl);
+            } else {
                 showLocalTerms();
-            });
-    </script>
+            }
+        })
+        .catch(function () {
+            showLocalTerms();
+        });
+</script>
 </body>
 </html>
